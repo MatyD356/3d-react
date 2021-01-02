@@ -12,7 +12,8 @@ const App = () => {
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 15, 10]} angle={0.3} />
       <Physics>
-        <Box />
+        <Box value={[0, 0, 0]} />
+        <Box value={[0, 1, 1]} />
       </Physics>
     </Canvas>
   );
