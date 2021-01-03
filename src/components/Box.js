@@ -10,7 +10,12 @@ const Box = ({ value }) => {
   })
 
   return (
-    <mesh ref={mesh} position={[...value]} rotation={new THREE.Euler(0, 0, 0)} scale={1}>
+    <mesh
+      ref={mesh}
+      position={[...value]}
+      rotation={new THREE.Euler(0, 0, 0)}
+      onClick={e => console.log('click')}
+    >
       <boxBufferGeometry attach="geometry" />
       <meshLambertMaterial attach="material" color="hotpink" />
     </mesh>
