@@ -13,20 +13,20 @@ import { useFrame } from 'react-three-fiber'
 
 export default function Model(props) {
   const mesh = useRef(null);
+  const group = useRef()
+  const { nodes, materials } = useGLTF('./rocket/scene.gltf')
   useFrame(() => {
     mesh.current.position.y += 1
   })
-  const group = useRef()
-  const { nodes, materials } = useGLTF('./rocket/scene.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh
+
           material={materials.palette}
           geometry={nodes.mesh_0.geometry}
           position={props.positionArr} rotation={[0, 0, Math.PI]}
           ref={mesh}
-          onClick={e => console.log('click')}
         />
       </group>
     </group>

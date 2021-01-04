@@ -1,20 +1,20 @@
 import React, { Suspense } from "react";
 import { Canvas } from "react-three-fiber";
-import { Stars } from '@react-three/drei'
+import { PointerLockControls } from '@react-three/drei'
 import { Physics } from "use-cannon";
 
 import Model from './Rocket'
 import Camera from './Camera'
+import SkyBox from './SkyBox'
 
 
 const App = () => {
 
   return (
-    <Canvas>
-      <Stars
-        radius={300}
-        fade />
+    <Canvas >
+      <PointerLockControls />
       <Camera />
+      <SkyBox />
       <Suspense fallback={null}>
         <Physics>
           <Model positionArr={[0, 60, -20]} />
